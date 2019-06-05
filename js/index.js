@@ -46,10 +46,12 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 let nav = Array.from(document.querySelectorAll('nav a'));
+
 let navigation = nav.map((element, arr) => {
   element.innerHTML = siteContent.nav[`nav-item-${arr + 1}`]
   element.style.color = "black";
- });
+ 
+});
 
 
 
