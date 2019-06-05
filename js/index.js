@@ -41,5 +41,15 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
 // My code 
+
+
+let nav = Array.from(document.querySelectorAll('nav a'));
+let navigation = nav.map((element, arr) => {
+  element.innerHTML = siteContent.nav[`nav-item-${arr + 1}`]
+  element.style.color = "black";
+ });
+
+
 
