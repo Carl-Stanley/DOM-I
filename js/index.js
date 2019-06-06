@@ -10,7 +10,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -44,26 +44,41 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // My code 
 
-// Top Navigation section 
+// Top Navigation section #1
 let nav = Array.from(document.querySelectorAll('nav a'));
 
 let navigation = nav.map((element, arr) => {
   element.innerHTML = siteContent.nav[`nav-item-${arr + 1}`]
-  element.style.color = "black";
-  
+  element.style.color = "darkgrey";
+  element.style.fontSize = '.95rem';
 });
 
-// Top right big image. 
+// Top right big image. #2
 const topRoundImg = document.getElementById("cta-img");
 topRoundImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-// setting up the DOM is Awesome stuff....
+// setting up the DOM is Awesome stuff.... #3
 let DOMAWE = document.querySelector("h1");
 DOMAWE.innerHTML = siteContent.cta['h1'];
-DOMAWE.title='DOM IS AWESOME';
 DOMAWE.style.color = 'black'; 
-DOMAWE.style.fontSize = '75px';
+DOMAWE.style.fontSize = '70px';
 
-// The get Started button. 
+// The get Started button. #4
 let getStartedbtn = document.querySelector("button");
 getStartedbtn.innerHTML = siteContent.cta['button'];
+
+// middle image between paragraphs #5
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+/*
+
+// Main section - with all headings - H4's #6 
+let mainSection = Array.from(document.querySelectorAll(".site-content .main-content h4"));
+let mainContent = mainSection.map((item, ar) => {
+  item.innerHTML = siteContent['main-content'][`man-top-${ar + 1}`]
+});
+
+*/
+
+
