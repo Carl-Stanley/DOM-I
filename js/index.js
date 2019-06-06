@@ -44,14 +44,26 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // My code 
 
-
+// Top Navigation section 
 let nav = Array.from(document.querySelectorAll('nav a'));
 
 let navigation = nav.map((element, arr) => {
   element.innerHTML = siteContent.nav[`nav-item-${arr + 1}`]
   element.style.color = "black";
- 
+  
 });
 
+// Top right big image. 
+const topRoundImg = document.getElementById("cta-img");
+topRoundImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
+// setting up the DOM is Awesome stuff....
+let DOMAWE = document.querySelector("h1");
+DOMAWE.innerHTML = siteContent.cta['h1'];
+DOMAWE.title='DOM IS AWESOME';
+DOMAWE.style.color = 'black'; 
+DOMAWE.style.fontSize = '75px';
 
+// The get Started button. 
+let getStartedbtn = document.querySelector("button");
+getStartedbtn.innerHTML = siteContent.cta['button'];
