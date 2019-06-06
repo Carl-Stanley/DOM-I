@@ -44,35 +44,51 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // My code 
 
-// Top Navigation section #1
+// Top Navigation section 
 let nav = Array.from(document.querySelectorAll('nav a'));
-
 let navigation = nav.map((element, arr) => {
   element.innerHTML = siteContent.nav[`nav-item-${arr + 1}`]
-  element.style.color = "darkgrey";
+  element.style.color = "green";
   element.style.fontSize = '.95rem';
 });
 
-// Top right big image. #2
+// Adding AppendChild()
+let newLink = document.createElement("a");
+const nav2 = document.querySelector('nav');
+newLink.innerHTML = 'Support';
+newLink.setAttribute('href','#');
+newLink.style.color = 'green';
+newLink.style.fontSize = '.95rem';
+nav2.appendChild(newLink);
+
+// Adding prePend()
+let newLink2 = document.createElement("a");
+const nav3 = document.querySelector('nav');
+newLink2.innerHTML = 'Home';
+newLink2.setAttribute('href','#');
+newLink2.style.color = 'green';
+newLink2.style.fontSize = '.95rem';
+nav3.prepend(newLink2);
+
+// Top right big image. 
 const topRoundImg = document.getElementById("cta-img");
 topRoundImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-// setting up the DOM is Awesome stuff.... #3
+// setting up the DOM is Awesome stuff.... 
 let DOMAWE = document.querySelector("h1");
 DOMAWE.innerHTML = siteContent.cta['h1'];
 DOMAWE.style.color = 'black'; 
 DOMAWE.style.fontSize = '70px';
 
-// The get Started button. #4
+// The get Started button. 
 let getStartedbtn = document.querySelector("button");
 getStartedbtn.innerHTML = siteContent.cta['button'];
 
-// middle image between paragraphs #5
+// middle image between paragraphs 
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-
-// Paragraph and Middle Header Sections #6 
+// Paragraph and Middle Header Sections  
 
 // Features 
 const mainContent =  document.getElementsByClassName("text-content")[0];
@@ -100,7 +116,7 @@ const mainContent5 =  document.getElementsByClassName("text-content")[4];
 mainContent5.children[0].innerHTML = siteContent["main-content"]["vision-h4"];
 mainContent5.children[1].innerHTML = siteContent["main-content"]["vision-content"]; 
 
-// contact section # 7 
+// contact section  
 const contact = document.getElementsByClassName("contact")[0];
 const breaks = /Street/gi;
 const addressText = siteContent.contact.address.replace(breaks, "Street<p>");
@@ -109,9 +125,7 @@ contact.children[1].innerHTML = addressText;
 contact.children[2].innerHTML = siteContent.contact.phone;
 contact.children[3].innerHTML = siteContent.contact.email;
 
-
-
-// footer section # 8
+// footer section 
 const footer = document.querySelector("footer p");
 footer.innerHTML = siteContent.footer["copyright"];
 footer.style.fontSize = '.95rem';
