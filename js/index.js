@@ -74,7 +74,31 @@ middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 // Paragraph and Middle Header Sections #6 
 
+// Features 
+const mainContent =  document.getElementsByClassName("text-content")[0];
+mainContent.children[0].innerHTML = siteContent["main-content"]["features-h4"];
+mainContent.children[1].innerHTML = siteContent["main-content"]["features-content"];
 
+// About 
+const mainContent2 =  document.getElementsByClassName("text-content")[1];
+mainContent2.children[0].innerHTML = siteContent["main-content"]["about-h4"];
+mainContent2.children[1].innerHTML = siteContent["main-content"]["about-content"];
+
+//Services
+const mainContent3 =  document.getElementsByClassName("text-content")[2];  
+mainContent3.children[0].innerHTML = siteContent["main-content"]["services-h4"];
+mainContent3.children[1].innerHTML = siteContent["main-content"]["services-content"];
+
+// Product 
+const mainContent4 =  document.getElementsByClassName("text-content")[3];  
+mainContent4.children[0].innerHTML = siteContent["main-content"]["product-h4"];
+mainContent4.children[1].innerHTML = siteContent["main-content"]["product-content"];
+
+
+// Vision
+const mainContent5 =  document.getElementsByClassName("text-content")[4];  
+mainContent5.children[0].innerHTML = siteContent["main-content"]["vision-h4"];
+mainContent5.children[1].innerHTML = siteContent["main-content"]["vision-content"]; 
 
 // contact section # 7 
 const contact = document.getElementsByClassName("contact")[0];
