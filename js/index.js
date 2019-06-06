@@ -29,7 +29,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -118,9 +118,7 @@ mainContent5.children[1].innerHTML = siteContent["main-content"]["vision-content
 
 // contact section  
 const contact = document.getElementsByClassName("contact")[0];
-const breaks = /Street/gi;
-const addressText = siteContent.contact.address.replace(breaks, "Street<p>");
-contact.children[0].innerHTML = siteContent.contact["contact-h4"];
+const addressText = siteContent.contact.address
 contact.children[1].innerHTML = addressText;
 contact.children[2].innerHTML = siteContent.contact.phone;
 contact.children[3].innerHTML = siteContent.contact.email;
