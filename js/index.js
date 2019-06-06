@@ -71,14 +71,24 @@ getStartedbtn.innerHTML = siteContent.cta['button'];
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-/*
 
-// Main section - with all headings - H4's #6 
-let mainSection = Array.from(document.querySelectorAll(".site-content .main-content h4"));
-let mainContent = mainSection.map((item, ar) => {
-  item.innerHTML = siteContent['main-content'][`man-top-${ar + 1}`]
-});
+// Paragraph and Middle Header Sections #6 
 
-*/
 
+
+// contact section # 7 
+const contact = document.getElementsByClassName("contact")[0];
+const breaks = /Street/gi;
+const addressText = siteContent.contact.address.replace(breaks, "Street<p>");
+contact.children[0].innerHTML = siteContent.contact["contact-h4"];
+contact.children[1].innerHTML = addressText;
+contact.children[2].innerHTML = siteContent.contact.phone;
+contact.children[3].innerHTML = siteContent.contact.email;
+
+
+
+// footer section # 8
+const footer = document.querySelector("footer p");
+footer.innerHTML = siteContent.footer["copyright"];
+footer.style.fontSize = '.95rem';
 
