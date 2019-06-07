@@ -14,19 +14,16 @@ const siteContent = {
       "button": "Get Started",
       "img-src": "img/header-img.png"
     },
-    "main-content": {
-      "features-h4":"Features",
-      "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-      "about-h4":"About",
-      "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-      "middle-img-src": "img/mid-page-accent.jpg",
-      "services-h4":"Services",
-      "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-      "product-h4":"Product",
-      "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-      "vision-h4":"Vision",
-      "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    },
+    "main-images": {             
+      "middle-img-src": "img/mid-page-accent.jpg"
+         },
+    "main-content": [
+        {H4: 'Features', P: 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'},
+        {H4: 'About', P: 'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'},
+        {H4: 'Services', P: 'Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'},
+        {H4: 'Product', P: 'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'},
+        {H4: 'Vision', P: 'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'}
+    ],
     "contact": {
       "contact-h4" : "Contact",
       "address" : "123 Way 456 Street<br> Somewhere, USA",
@@ -86,36 +83,21 @@ const siteContent = {
   
   // middle image between paragraphs 
   let middleImage = document.getElementById("middle-img");
-  middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+  middleImage.setAttribute('src', siteContent["main-images"]["middle-img-src"]);
   
-  // Paragraph and Middle Header Sections  
-  
-  const mainContentArray = siteContent["main-content"];
-    
+  // Paragraph and Middle Header Sections   
+  const mainContentArray = siteContent["main-content"]; 
   const mainContentH4elements = document.querySelectorAll('.text-content h4');
-  
   const mainContentPelements = document.querySelectorAll('.text-content P');
 
-  // Features 
-  mainContentH4elements[0].innerHTML = mainContentArray["features-h4"];
-  mainContentPelements[0].innerHTML = mainContentArray["features-content"];
+  for(item in mainContentArray)
+  {
 
-  // About 
-  mainContentH4elements[1].innerHTML = mainContentArray["about-h4"];
-  mainContentPelements[1].innerHTML = mainContentArray["about-content"];
-    
-  //Services
-  mainContentH4elements[2].innerHTML = mainContentArray["services-h4"];
-  mainContentPelements[2].innerHTML = mainContentArray["services-content"];
+    mainContentH4elements[item].innerHTML = mainContentArray[item]["H4"];
+    mainContentPelements[item].innerHTML = mainContentArray[item]["P"];
 
-  // Product 
-  mainContentH4elements[3].innerHTML = mainContentArray["product-h4"];
-  mainContentPelements[3].innerHTML = mainContentArray["product-content"];
+  }
   
-  // Vision
-  mainContentH4elements[4].innerHTML = mainContentArray["vision-h4"];
-  mainContentPelements[4].innerHTML = mainContentArray["vision-content"];
-
   // contact section  
   const contact = document.getElementsByClassName("contact")[0];
   const addressText = siteContent.contact.address
