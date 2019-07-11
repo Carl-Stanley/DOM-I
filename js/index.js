@@ -83,6 +83,12 @@ DOMAWE.style.fontSize = '70px';
 // The get Started button. 
 let getStartedbtn = document.querySelector("button");
 getStartedbtn.innerHTML = siteContent.cta['button'];
+let body1 =  document.querySelector('body');
+getStartedbtn.addEventListener('dblclick',function(event){ 
+
+  body1.bgColor = 'green';
+
+});
 
 // middle image between paragraphs 
 let middleImage = document.getElementById("middle-img");
